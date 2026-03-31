@@ -21,9 +21,7 @@
     <!-- Main Content -->
     <section>
         <h2>Weekly Schedule</h2>
-       
-
-        <!-- Simple Table Instead of Grid + JS -->
+  
         <table border="1">
             <tr>
                 <th>Time</th>
@@ -49,7 +47,6 @@
                 <td></td><td></td><td></td><td></td><td></td>
             </tr>
 
-            <!-- Add more rows later -->
         </table>
     </section>
 
