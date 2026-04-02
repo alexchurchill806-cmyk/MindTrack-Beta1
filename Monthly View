@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly View</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+    <h1>Dashboard App</h1>
+    <ul> 
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="WeeklyView.html">Weekly View</a></li>
+        <li><a href="Settings.html">Settings</a></li>
+    </ul>
+</nav>
+
+<section> 
+    <h2>Monthly View</h2>
+    <p>This page shows the events planned for the month with a month at a glance tab that has a drop down menu for 1m, 6m, and 12m which tracks the habit completion rates across the selected timespan.
+         </p>
+    <h2>February</h2>
+     <table border="1">
+            <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+            </tr>
+
+            <tr>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+            </tr>
+
+            <tr> 
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+            </tr>
+     </table>
+</section>
+
+<br>  
+
+<section> 
+    <h4>Month At A Glance</h4>
+
+    <label for="Timeframe">Select Timeframe:</label>
+    <select id="Timeframe" name="Timeframe">
+        <option value="">-- Choose One --</option>
+        <option value="1m"> 1m </option>
+        <option value="6m"> 6m </option>
+        <option value="12m"> 12m </option>
+    </select>
+        <p>Progress: 27 / 36 habits completed</p>
+
+        <div style="width:100px; height:100px; border:5px solid rgb(241, 9, 9); border-radius:50%; text-align:center; line-height:100px;">
+            27/36
+        </div>
+</section>
+
+<section>
+    <h4>Day Focus</h4>
+
+    <p>This shows how time is spent in the day</p>
+     <p>Study</p>
+    <div style="width:70%; height:10px; background-color:rgb(241, 9, 9);"></div>
+
+    <p>Workout</p>
+    <div style="width:30%; height:10px; background-color:rgb(241, 9, 9);"></div>
+
+    <p>Sleep</p>
+    <div style="width:50%; height:10px; background-color:rgb(241, 9, 9);"></div>
+
+    <p>Eat</p>
+    <div style="width:15%; height:10px; background-color:rgb(241, 9, 9);"></div>
+</section>
+
+</body>
+</html>
