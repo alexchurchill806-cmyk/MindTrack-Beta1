@@ -1,0 +1,93 @@
+<-- Jason Rodriguez -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form>
+
+<div class="ToggleOptions">
+
+  <label for="eventOption">Event</label>
+  <input type="radio" id="eventOption" name="entryType" value="event" checked>
+
+  <label for="habitOption">Habit</label>
+  <input type="radio" id="habitOption" name="entryType" value="habit">
+
+</div>
+
+<div class="EventInput">
+
+  <label for="EventName">Event Name</label>
+  <input type="text" id="EventName" name="eventName" required>
+
+  <label for="EventDate">Date</label>
+  <input type="date" id="EventDate" name="eventDate" required>
+
+  <p>Category</p>
+  <label><input type="radio" name="eventCategory" value="assignment" checked> Assignment</label>
+  <label><input type="radio" name="eventCategory" value="exam"> Exam</label>
+  <label><input type="radio" name="eventCategory" value="personal"> Personal</label>
+  <label><input type="radio" name="eventCategory" value="other"> Other</label>
+
+  <label for="EventTime">Time</label>
+  <input type="time" id="EventTime" name="eventTime" required>
+
+  <p>Choose a color:</p>
+  <label><input type="radio" name="eventColor" value="blue"> Blue</label>
+  <label><input type="radio" name="eventColor" value="green"> Green</label>
+  <label><input type="radio" name="eventColor" value="red"> Red</label>
+  <label><input type="radio" name="eventColor" value="purple"> Purple</label>
+  <label><input type="radio" name="eventColor" value="orange"> Orange</label>
+
+  <label for="EventDescription">Description</label>
+  <input type="text" id="EventDescription" name="eventDescription" required>
+
+  <button type="button">Cancel</button>
+  <button type="submit" name="saveEvent">Save Event</button>
+
+</div>
+
+<div class="HabitInput">
+
+  <label for="HabitName">Habit Name</label>
+  <input type="text" id="HabitName" name="habitName" required>
+
+  <label for="HabitDate">Date</label>
+  <input type="date" id="HabitDate" name="habitDate" required>
+
+  <p>Category</p>
+  <label><input type="radio" name="habitCategory" value="health" checked> Health</label>
+  <label><input type="radio" name="habitCategory" value="productivity"> Productivity</label>
+  <label><input type="radio" name="habitCategory" value="hobby"> Hobby</label>
+  <label><input type="radio" name="habitCategory" value="learning"> Learning</label>
+  <label><input type="radio" name="habitCategory" value="lifestyle"> Lifestyle</label>
+  <label><input type="radio" name="habitCategory" value="other"> Other</label>
+
+  <label for="ReminderTime">Reminder Time</label>
+  <input type="time" id="ReminderTime" name="habitReminder" required>
+
+  <p>Frequency</p>
+  <label><input type="radio" name="habitFrequency" value="daily" checked> Daily</label>
+  <label><input type="radio" name="habitFrequency" value="weekly"> Weekly</label>
+  <label><input type="radio" name="habitFrequency" value="monthly"> Monthly</label>
+
+  <label for="TargetGoal">Target Goal</label>
+  <input type="text" id="TargetGoal" name="habitGoal" required>
+
+  <label for="HabitDescription">Description</label>
+  <input type="text" id="HabitDescription" name="habitDescription" required>
+
+  <button type="button">Cancel</button>
+  <button type="submit" name="saveHabit">Save Habit</button>
+
+</div>
+</form>
+
+</body>
+</html>
