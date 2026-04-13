@@ -3,91 +3,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Habit</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="page-shell">
+    <main class="habit-card" aria-label="Add New Habit Form">
+      <img class="card-bg" src="images/rectangle7.png" alt="Decorative background"> 
+      <h1>Add New Habit</h1>
 
-<form>
+      <div class="toggle-group" role="group" aria-label="Choose event or habit">
+        <button type="button" class="toggle-btn" data-choice="event">
+          <img src="images/event-option.png" alt="Event option" class="toggle-icon">
+          Event
+        </button>
+        <button type="button" class="toggle-btn active" data-choice="habit">
+          <img src="images/habit-option.png" alt="Habit option" class="toggle-icon">
+          Habit
+        </button>
+      </div>
 
-<div class="ToggleOptions">
+      <div class="field">
+        <label for="habitName">Habit Name</label>
+        <input id="habitName" type="text" placeholder="Enter habit name">
+      </div>
 
-  <label for="eventOption">Event</label>
-  <input type="radio" id="eventOption" name="entryType" value="event" checked>
+      <div class="field date-field">
+        <label for="habitDate">Date</label>
+        <div class="input-with-icon">
+          <img src="images/icon.png" alt="Calendar icon" class="field-icon">
+          <input id="habitDate" type="date" aria-label="Pick a date">
+        </div>
+      </div>
 
-  <label for="habitOption">Habit</label>
-  <input type="radio" id="habitOption" name="entryType" value="habit">
+      <div class="field">
+        <label>Category</label>
+        <div class="category-grid" role="group" aria-label="Category options">
+          <button type="button" class="category-pill active">Health</button>
+          <button type="button" class="category-pill">Productivity</button>
+          <button type="button" class="category-pill">Learning</button>
+          <button type="button" class="category-pill">Lifestyle</button>
+        </div>
+        <button type="button" class="category-wide">Other</button>
+      </div>
 
-</div>
+      <div class="field time-field">
+        <label for="habitTime">Time</label>
+        <input id="habitTime" type="text" placeholder="Select time" readonly>
+      </div>
 
-<div class="EventInput">
+      <div class="field frequency-field">
+        <label>Frequency</label>
+        <div class="frequency-grid" role="group" aria-label="Frequency options">
+          <button type="button" class="frequency-pill active">Daily</button>
+          <button type="button" class="frequency-pill">Weekly</button>
+          <button type="button" class="frequency-pill">Monthly</button>
+        </div>
+      </div>
 
-  <label for="EventName">Event Name</label>
-  <input type="text" id="EventName" name="eventName" required>
+      <div class="field">
+        <label for="habitDescription">Description</label>
+        <textarea id="habitDescription" rows="4" placeholder="Notes about the event..."></textarea>
+      </div>
 
-  <label for="EventDate">Date</label>
-  <input type="date" id="EventDate" name="eventDate" required>
+      <div class="upload-field">
+        <input id="fileUpload" type="file" accept=".pdf,.png,.jpg,.jpeg,.gif,.docx" hidden>
+        <div id="uploadZone" class="upload-zone" tabindex="0" aria-label="Drag and drop files or click to upload">
+          <div class="upload-content">
+            <p class="upload-title">Drag & Drop file here</p>
+            <p class="upload-subtitle">or Click to Upload</p>
+          </div>
+        </div>
+        <p class="upload-help">Supported: PDF, Image, Screenshot, DOCX</p>
+      </div>
 
-  <p>Category</p>
-  <label><input type="radio" name="eventCategory" value="assignment" checked> Assignment</label>
-  <label><input type="radio" name="eventCategory" value="exam"> Exam</label>
-  <label><input type="radio" name="eventCategory" value="personal"> Personal</label>
-  <label><input type="radio" name="eventCategory" value="other"> Other</label>
+      <div class="actions">
+        <button type="button" class="secondary-btn" id="cancelButton">Cancel</button>
+        <button type="button" class="primary-btn" id="saveButton">Save Event</button>
+      </div>
+    </main>
+  </div>
 
-  <label for="EventTime">Time</label>
-  <input type="time" id="EventTime" name="eventTime" required>
-
-  <p>Choose a color:</p>
-  <label><input type="radio" name="eventColor" value="blue"> Blue</label>
-  <label><input type="radio" name="eventColor" value="green"> Green</label>
-  <label><input type="radio" name="eventColor" value="red"> Red</label>
-  <label><input type="radio" name="eventColor" value="purple"> Purple</label>
-  <label><input type="radio" name="eventColor" value="orange"> Orange</label>
-
-  <label for="EventDescription">Description</label>
-  <input type="text" id="EventDescription" name="eventDescription" required>
-
-  <button type="button">Cancel</button>
-  <button type="submit" name="saveEvent">Save Event</button>
-
-</div>
-
-<div class="HabitInput">
-
-  <label for="HabitName">Habit Name</label>
-  <input type="text" id="HabitName" name="habitName" required>
-
-  <label for="HabitDate">Date</label>
-  <input type="date" id="HabitDate" name="habitDate" required>
-
-  <p>Category</p>
-  <label><input type="radio" name="habitCategory" value="health" checked> Health</label>
-  <label><input type="radio" name="habitCategory" value="productivity"> Productivity</label>
-  <label><input type="radio" name="habitCategory" value="hobby"> Hobby</label>
-  <label><input type="radio" name="habitCategory" value="learning"> Learning</label>
-  <label><input type="radio" name="habitCategory" value="lifestyle"> Lifestyle</label>
-  <label><input type="radio" name="habitCategory" value="other"> Other</label>
-
-  <label for="ReminderTime">Reminder Time</label>
-  <input type="time" id="ReminderTime" name="habitReminder" required>
-
-  <p>Frequency</p>
-  <label><input type="radio" name="habitFrequency" value="daily" checked> Daily</label>
-  <label><input type="radio" name="habitFrequency" value="weekly"> Weekly</label>
-  <label><input type="radio" name="habitFrequency" value="monthly"> Monthly</label>
-
-  <label for="TargetGoal">Target Goal</label>
-  <input type="text" id="TargetGoal" name="habitGoal" required>
-
-  <label for="HabitDescription">Description</label>
-  <input type="text" id="HabitDescription" name="habitDescription" required>
-
-  <button type="button">Cancel</button>
-  <button type="submit" name="saveHabit">Save Habit</button>
-
-</div>
-</form>
-
+  <script src="script.js"></script>
 </body>
 </html>
