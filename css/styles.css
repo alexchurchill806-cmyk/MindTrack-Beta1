@@ -1,1 +1,122 @@
+/* Shared navigation and page styling */
+:root {
+  --bg: #f8fbff;
+  --nav: #0d6efd;
+  --nav-text: #ffffff;
+  --card: #ffffff;
+  --text: #1f2937;
+  --border: #d1d5db;
+  --accent: #0b5ed7;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+main,
+section {
+  padding: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--nav);
+  color: var(--nav-text);
+}
+
+.main-nav h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.main-nav a {
+  display: inline-block;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.main-nav a[href$="Dashboard.html"],
+.main-nav a[href$="WeeklyView.html"],
+.main-nav a[href$="MonthlyView.html"],
+.main-nav a[href$="Habit&Event.html"] {
+  font-weight: 500;
+}
+
+section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  margin: 1.5rem;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th,
+table td {
+  border: 1px solid var(--border);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+table th {
+  background: #eef4ff;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 720px) {
+  .main-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .main-nav ul {
+    justify-content: center;
+  }
+}
