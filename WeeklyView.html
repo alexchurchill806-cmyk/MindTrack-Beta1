@@ -11,50 +11,75 @@
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="main-nav">
+
+    <nav class="main-nav" aria-label="Main navigation">
         <h1>Weekly Schedule</h1>
         <ul>
-            <li><a href="index.html">Dashboard</a></li>
-            <li><a href="WeeklyView.html">Weekly</a></li>
+            <li><a href="Dashboard.html">Home</a></li>
+            <li><a href="WeeklyView.html" class="current-page" aria-current="page">Weekly</a></li>
             <li><a href="MonthlyView.html">Monthly</a></li>
             <li><a href="Habit&Event.html">Habits & Events</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <section>
-        <h2>Weekly Schedule</h2>
-        <p>This is a basic layout of the schedule. More features will be added in Milestone 2.</p>
+    <div class="weekly-container">
+        <section>
+            <div class="week-nav">
+                <button aria-label="Previous week" class="week-btn">&lt; Prev</button>
+                <span class="week-label" aria-live="polite">April 13 - April 19</span>
+                <button aria-label="Next week" class="week-btn">Next &gt;</button>
+            </div>
 
-        <!-- Simple Table Instead of Grid + JS -->
-        <table border="1">
-            <tr>
-                <th>Time</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-            </tr>
+            <h2>Weekly Schedule</h2>
+         
 
-            <tr>
-                <td>8 AM</td>
-                <td></td><td></td><td></td><td></td><td></td>
-            </tr>
+            <button class="add-event-btn" aria-label="Add event">+ Add Event</button>
 
-            <tr>
-                <td>9 AM</td>
-                <td></td><td></td><td></td><td></td><td></td>
-            </tr>
+            <div class="progress-bar" aria-label="Weekly Progress" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar-fill" style="width: 60%"></div>
+                <span class="progress-label">60% Complete</span>
+            </div>
 
-            <tr>
-                <td>10 AM</td>
-                <td></td><td></td><td></td><td></td><td></td>
-            </tr>
-
-            <!-- Add more rows later -->
-        </table>
-    </section>
+            <div class="table-responsive">
+                <table class="weekly-table" border="1">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th class="day-header" id="monday">Monday</th>
+                            <th class="day-header" id="tuesday">Tuesday</th>
+                            <th class="day-header current-day" id="wednesday">Wednesday <span class="sr-only">(Today)</span></th>
+                            <th class="day-header" id="thursday">Thursday</th>
+                            <th class="day-header" id="friday">Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>8 AM</td>
+                            <td></td><td></td>
+                            <td>
+                                <button class="event-btn" aria-describedby="event-popover-1">Meeting</button>
+                                <div id="event-popover-1" class="event-popover" role="tooltip" hidden>
+                                    <strong>Meeting</strong><br>
+                                    8:00 AM - 9:00 AM<br>
+                                    Project sync with team.
+                                </div>
+                            </td>
+                            <td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>9 AM</td>
+                            <td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>10 AM</td>
+                            <td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <!-- Add more rows later -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
