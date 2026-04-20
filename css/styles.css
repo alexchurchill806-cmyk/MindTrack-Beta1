@@ -12,7 +12,7 @@
   align-items: center;
 }
 .progress-bar-fill {
-  background: linear-gradient(90deg, var(--accent), #e74c3c);
+  background: linear-gradient(90deg, var(--accent), #4f8cff);
   height: 100%;
   transition: width 0.4s cubic-bezier(.4,1.4,.6,1);
   border-radius: 1rem 0 0 1rem;
@@ -30,13 +30,13 @@
 }
 /* Shared navigation and page styling */
 :root {
-  --bg: #fdf5f5;
-  --nav: #1a0a0a;
+  --bg: #f8fbff;
+  --nav: #0d6efd;
   --nav-text: #ffffff;
   --card: #ffffff;
   --text: #1f2937;
-  --border: #e8c8c8;
-  --accent: #c0392b;
+  --border: #d1d5db;
+  --accent: #0b5ed7;
 }
 
 * {
@@ -132,7 +132,7 @@ table td {
 }
 
 table th {
-  background: #fdecea;
+  background: #eef4ff;
 }
 
 ul {
@@ -145,16 +145,7 @@ ul {
   border: 1px solid var(--border);
   border-radius: 0.75rem;
   padding: 0.9rem 1rem;
-  background: #fff8f8;
-}
-
-.nav-logo {
-  height: 40px;
-  width: 40px;
-  object-fit: contain;
-  border-radius: 50%;
-  background: #fff;
-  padding: 2px;
+  background: #f9fbff;
 }
 
 .habit-details summary {
@@ -167,33 +158,6 @@ ul {
   margin-top: 0.75rem;
 }
 
-.clickable-cell {
-  cursor: pointer;
-  transition: background 0.15s ease;
-}
-
-.clickable-cell:hover {
-  background: #fdecea;
-}
-
-.add-event-btn {
-  display: inline-block;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 1rem;
-  transition: background 0.2s ease;
-}
-
-.add-event-btn:hover {
-  background: #a93226;
-}
-
 @media (max-width: 720px) {
   .main-nav {
     flex-direction: column;
@@ -204,3 +168,38 @@ ul {
     justify-content: center;
   }
 }
+
+.Month-glance {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: #f9fbff;
+}
+
+.Day-focus {
+  margin-top: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  background: #f9fbff;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.month-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
