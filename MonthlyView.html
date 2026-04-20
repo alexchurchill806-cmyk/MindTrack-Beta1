@@ -23,6 +23,9 @@
     <h2>Monthly View</h2>
     <p>This page shows the events planned for the month with a month at a glance tab that has a drop down menu for 1m, 6m, and 12m which tracks the habit completion rates across the selected timespan.
          </p>
+
+    <button class="add-event-btn" aria-label="Add event" onclick="window.location.href='Habit&amp;Event.html'">+ Add Event</button>
+
     <h2>February</h2>
      <table border="1">
             <tr>
@@ -36,43 +39,43 @@
             </tr>
 
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
+                <td id="cal-day-1">1</td>
+                <td id="cal-day-2">2</td>
+                <td id="cal-day-3">3</td>
+                <td id="cal-day-4">4</td>
+                <td id="cal-day-5">5</td>
+                <td id="cal-day-6">6</td>
+                <td id="cal-day-7">7</td>
             </tr>
 
             <tr>
-                <td>8</td>
-                <td>9</td>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
+                <td id="cal-day-8">8</td>
+                <td id="cal-day-9">9</td>
+                <td id="cal-day-10">10</td>
+                <td id="cal-day-11">11</td>
+                <td id="cal-day-12">12</td>
+                <td id="cal-day-13">13</td>
+                <td id="cal-day-14">14</td>
             </tr>
 
             <tr>
-                <td>15</td>
-                <td>16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
+                <td id="cal-day-15">15</td>
+                <td id="cal-day-16">16</td>
+                <td id="cal-day-17">17</td>
+                <td id="cal-day-18">18</td>
+                <td id="cal-day-19">19</td>
+                <td id="cal-day-20">20</td>
+                <td id="cal-day-21">21</td>
             </tr>
 
             <tr> 
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
+                <td id="cal-day-22">22</td>
+                <td id="cal-day-23">23</td>
+                <td id="cal-day-24">24</td>
+                <td id="cal-day-25">25</td>
+                <td id="cal-day-26">26</td>
+                <td id="cal-day-27">27</td>
+                <td id="cal-day-28">28</td>
             </tr>
      </table>
 </section>
@@ -114,4 +117,34 @@
 </section>
 
 </body>
+
+<script>
+(function () {
+    // Calendar is hardcoded to February — use the current year
+    const calYear = new Date().getFullYear();
+    const calMonth = 1; // February (0-indexed)
+
+    const colorMap = { blue: "#3b82f6", green: "#22c55e", red: "#ef4444", purple: "#a855f7", orange: "#f97316" };
+    const events = JSON.parse(localStorage.getItem("mindtrack_events") || "[]");
+
+    events.forEach(function (ev) {
+        const evDate = new Date(ev.date + "T00:00:00");
+        if (evDate.getFullYear() !== calYear || evDate.getMonth() !== calMonth) return;
+        const day = evDate.getDate();
+        const td = document.getElementById("cal-day-" + day);
+        if (!td) return;
+
+        const dot = document.createElement("div");
+        dot.title = ev.name + " (" + ev.startTime + " - " + ev.endTime + ")";
+        dot.style.cssText = "display:inline-block;width:8px;height:8px;border-radius:50%;background:" + (colorMap[ev.color] || "#3b82f6") + ";margin:1px 1px 0;vertical-align:middle;";
+        td.appendChild(dot);
+
+        const label = document.createElement("div");
+        label.textContent = ev.name;
+        label.style.cssText = "font-size:0.65rem;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60px;";
+        td.appendChild(label);
+    });
+})();
+</script>
+
 </html>

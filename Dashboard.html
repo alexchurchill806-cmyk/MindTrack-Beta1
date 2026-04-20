@@ -14,7 +14,10 @@
 
 	<header>
 		<nav class="main-nav" aria-label="Main navigation">
-			<h1>MindTrack</h1>
+			<div style="display:flex;align-items:center;gap:0.6rem;">
+				<img src="images/IMG_2054.png" alt="MindTrack logo" class="nav-logo">
+				<h1>MindTrack</h1>
+			</div>
 			<ul>
 				<li><a href="Dashboard.html" class="current-page" aria-current="page">Home</a></li>
 				<li><a href="WeeklyView.html">Weekly</a></li>
@@ -27,6 +30,8 @@
 	<main class="dashboard-container">
 		<section>
 			<h2>Today's Dashboard</h2>
+
+			<button class="add-event-btn" aria-label="Add event" onclick="window.location.href='Habit&amp;Event.html'">+ Add Event</button>
 
 			<h3>Timeline</h3>
 			<ul>
