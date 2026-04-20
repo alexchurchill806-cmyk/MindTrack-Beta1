@@ -1,4 +1,4 @@
-<! -- Julius Salcido -->
+<! -- Julius Salcido -- >
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,27 +8,33 @@
     <title>MindTrack Monthly View</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
-<nav>
-    <h1>MindTrack</h1>
-    <ul> 
-        <li><a href="Dashboard.html">Home</a></li>
-        <li><a href="WeeklyView.html">Weekly View</a></li>
-        <li><a href="Settings.html">Settings</a></li>
-    </ul>
-</nav>
+<header>
+	<nav class="main-nav" aria-label="Main navigation">
+		<h1>MindTrack</h1>
+		<ul>
+			<li><a href="Dashboard.html" class="current-page" aria-current="page">Home</a></li>
+			<li><a href="WeeklyView.html">Weekly</a></li>
+			<li><a href="MonthlyView.html">Monthly</a></li>
+			<li><a href="Habit&Event.html">Habits & Events</a></li>
+		</ul>
+	</nav>
+</header>
 
 <section> 
     <h2>Monthly View</h2>
-    <p>This page shows the events planned for the month with a month at a glance tab that has a drop down menu for 1m, 6m, and 12m which tracks the habit completion rates across the selected timespan.
-         </p>
+   
+    <div class="calendar-header">
+        <button aria-label="Previous month" class="month-btn">&lt; Prev</button>
+        <button aria-label="Next month" class="month-btn">Next &gt;</button>
+    </div>
 
-    <button class="add-event-btn" aria-label="Add event" onclick="window.location.href='Habit&amp;Event.html'">+ Add Event</button>
-
-    <h2>February</h2>
-     <table border="1">
-            <tr>
+    <div>
+        <h2>February</h2>
+        <table border="1">
+             <tr>
                 <th>S</th>
                 <th>M</th>
                 <th>T</th>
@@ -39,51 +45,52 @@
             </tr>
 
             <tr>
-                <td id="cal-day-1">1</td>
-                <td id="cal-day-2">2</td>
-                <td id="cal-day-3">3</td>
-                <td id="cal-day-4">4</td>
-                <td id="cal-day-5">5</td>
-                <td id="cal-day-6">6</td>
-                <td id="cal-day-7">7</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
             </tr>
 
             <tr>
-                <td id="cal-day-8">8</td>
-                <td id="cal-day-9">9</td>
-                <td id="cal-day-10">10</td>
-                <td id="cal-day-11">11</td>
-                <td id="cal-day-12">12</td>
-                <td id="cal-day-13">13</td>
-                <td id="cal-day-14">14</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
             </tr>
 
             <tr>
-                <td id="cal-day-15">15</td>
-                <td id="cal-day-16">16</td>
-                <td id="cal-day-17">17</td>
-                <td id="cal-day-18">18</td>
-                <td id="cal-day-19">19</td>
-                <td id="cal-day-20">20</td>
-                <td id="cal-day-21">21</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
             </tr>
 
             <tr> 
-                <td id="cal-day-22">22</td>
-                <td id="cal-day-23">23</td>
-                <td id="cal-day-24">24</td>
-                <td id="cal-day-25">25</td>
-                <td id="cal-day-26">26</td>
-                <td id="cal-day-27">27</td>
-                <td id="cal-day-28">28</td>
+                <td>22</td>
+                <td>23</td>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
             </tr>
-     </table>
+        </table>
+     </div>
 </section>
 
 <br>  
 
-<section> 
-    <h4>Month At A Glance</h4>
+<details class="Month-glance" open>
+    <summary>Month At A Glance</summary>
 
     <label for="Timeframe">Select Timeframe:</label>
     <select id="Timeframe" name="Timeframe">
@@ -93,58 +100,29 @@
         <option value="12m"> 12m </option>
     </select>
         <p>Progress: 27 / 36 habits completed</p>
-
-        <div style="width:100px; height:100px; border:5px solid rgb(241, 9, 9); border-radius:50%; text-align:center; line-height:100px;">
+        <div style="width:100px; height:100px; border:5px solid #0d6efd; border-radius:50%; text-align:center; line-height:100px;">
             27/36
         </div>
-</section>
+</details>
 
-<section>
-    <h4>Day Focus</h4>
+<br>
 
-    <p>This shows how time is spent in the day</p>
-     <p>Study</p>
-    <div style="width:70%; height:10px; background-color:rgb(241, 9, 9);"></div>
+<details class="Day-focus" open>
+    <summary>Day Focus</summary>
+
+    <p>Study</p>
+    <div style="width:70%; height:10px; background-color:#0d6efd;"></div>
 
     <p>Workout</p>
-    <div style="width:30%; height:10px; background-color:rgb(241, 9, 9);"></div>
+    <div style="width:30%; height:10px; background-color:#0d6efd;"></div>
 
     <p>Sleep</p>
-    <div style="width:50%; height:10px; background-color:rgb(241, 9, 9);"></div>
+    <div style="width:50%; height:10px; background-color:#0d6efd;"></div>
 
     <p>Eat</p>
-    <div style="width:15%; height:10px; background-color:rgb(241, 9, 9);"></div>
-</section>
+    <div style="width:15%; height:10px; background-color:#0d6efd;"></div>
+</details>
+<br> <br>
 
 </body>
-
-<script>
-(function () {
-    // Calendar is hardcoded to February — use the current year
-    const calYear = new Date().getFullYear();
-    const calMonth = 1; // February (0-indexed)
-
-    const colorMap = { blue: "#3b82f6", green: "#22c55e", red: "#ef4444", purple: "#a855f7", orange: "#f97316" };
-    const events = JSON.parse(localStorage.getItem("mindtrack_events") || "[]");
-
-    events.forEach(function (ev) {
-        const evDate = new Date(ev.date + "T00:00:00");
-        if (evDate.getFullYear() !== calYear || evDate.getMonth() !== calMonth) return;
-        const day = evDate.getDate();
-        const td = document.getElementById("cal-day-" + day);
-        if (!td) return;
-
-        const dot = document.createElement("div");
-        dot.title = ev.name + " (" + ev.startTime + " - " + ev.endTime + ")";
-        dot.style.cssText = "display:inline-block;width:8px;height:8px;border-radius:50%;background:" + (colorMap[ev.color] || "#3b82f6") + ";margin:1px 1px 0;vertical-align:middle;";
-        td.appendChild(dot);
-
-        const label = document.createElement("div");
-        label.textContent = ev.name;
-        label.style.cssText = "font-size:0.65rem;color:#111;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60px;";
-        td.appendChild(label);
-    });
-})();
-</script>
-
 </html>
