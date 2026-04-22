@@ -1,0 +1,75 @@
+
+<! --Alexander Churchill -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MindTrack</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+
+	<header>
+		<nav class="main-nav" aria-label="Main navigation">
+			<div style="display:flex;align-items:center;gap:0.6rem;">
+				<img src="images/IMG_2054.png" alt="MindTrack logo" class="nav-logo">
+				<h1>MindTrack</h1>
+			</div>
+			<ul>
+				<li><a href="Dashboard.html" class="current-page" aria-current="page">Home</a></li>
+				<li><a href="WeeklyView.html">Weekly</a></li>
+				<li><a href="MonthlyView.html">Monthly</a></li>
+				<li><a href="Habit&Event.html">Habits & Events</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="dashboard-container">
+		<section>
+			<h2>Today's Dashboard</h2>
+
+			<button class="add-event-btn" aria-label="Add event" onclick="window.location.href='Habit&amp;Event.html'">+ Add Event</button>
+
+			<h3>Timeline</h3>
+			<ul>
+				<li>8AM - Event</li>
+				<li>12PM - Lunch</li>
+			</ul>
+
+
+			<details class="habit-details" open>
+				<summary>Habit Checklist</summary>
+				<form class="habit-checkbox-group">
+					<ul>
+						<li>
+							<label>
+								<input type="checkbox" name="habit1" value="habit1">
+								Habit 1
+							</label>
+						</li>
+						<li>
+							<label>
+								<input type="checkbox" name="habit2" value="habit2">
+								Habit 2
+							</label>
+						</li>
+						<li>
+							<label>
+								<input type="checkbox" name="habit3" value="habit3">
+								Habit 3
+							</label>
+						</li>
+					</ul>
+				</form>
+			</details>
+
+			<h3>Progress</h3>
+		</section>
+	</main>
+
+</body>
+</html>
+
