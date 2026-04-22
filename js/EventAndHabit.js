@@ -34,29 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("date") || params.get("start")) {
-    
-        const eventOption = document.getElementById("eventOption");
-        if (eventOption) { eventOption.checked = true; eventOption.dispatchEvent(new Event("change")); }
-
-        if (params.get("date")) {
-            const dateField = document.getElementById("EventDate");
-            if (dateField) dateField.value = params.get("date");
-        }
-        if (params.get("start")) {
-            const startField = document.getElementById("EventStartTime");
-            if (startField) startField.value = params.get("start");
-        }
-        if (params.get("end")) {
-            const endField = document.getElementById("EventEndTime");
-            if (endField) endField.value = params.get("end");
-        }
-    }
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     const dailyOption = document.getElementById("daily");
     const weeklyOption = document.getElementById("weekly");
@@ -92,34 +69,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const saveEventBtn = document.querySelector("button[name='saveEvent']");
-    if (!saveEventBtn) return;
+    const fileUpload = document.querySelector(".FileUpload");
+    const fileInput = document.getElementById("FileInput");
+    const uploadText = fileUpload.querySelector("p");
 
-    saveEventBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("EventName").value.trim();
-        const date = document.getElementById("EventDate").value;
-        const startTime = document.getElementById("EventStartTime").value;
-        const endTime = document.getElementById("EventEndTime").value;
-        const category = document.querySelector("input[name='eventCategory']:checked")?.value || "";
-        const color = document.querySelector("input[name='eventColor']:checked")?.value || "blue";
-        const description = document.getElementById("EventDescription").value.trim();
-
-        if (!name || !date || !startTime || !endTime) {
-            alert("Please fill in Event Name, Date, and Time.");
-            return;
+    function updateFileDisplay() {
+        if (fileInput.files.length > 0) {
+            uploadText.textContent = `File selected: ${fileInput.files[0].name}`;
+            displayPDF(fileInput.files[0]);
+        } else {
+            uploadText.textContent = "Drag & Drop PDF here or Click to Upload";
+            hidePDFViewer();
         }
+    }
 
-        const event = { name, date, startTime, endTime, category, color, description };
-        const events = JSON.parse(localStorage.getItem("mindtrack_events") || "[]");
-        events.push(event);
-        localStorage.setItem("mindtrack_events", JSON.stringify(events));
+    function displayPDF(file) {
+        const pdfEmbed = document.getElementById('pdfEmbed');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const url = URL.createObjectURL(file);
+        pdfEmbed.src = url;
+        pdfViewer.style.display = 'block';
+    }
 
-        const returnTo = document.referrer && document.referrer !== window.location.href
-            ? document.referrer
-            : "Dashboard.html";
-        window.location.href = returnTo;
+    function hidePDFViewer() {
+        const pdfViewer = document.getElementById('pdfViewer');
+        pdfViewer.style.display = 'none';
+    }
+
+    fileUpload.addEventListener("click", () => {
+        fileInput.click();
+    });
+
+    fileInput.addEventListener("change", updateFileDisplay);
+
+    fileUpload.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        fileUpload.classList.add("dragover");
+    });
+
+    fileUpload.addEventListener("dragleave", () => {
+        fileUpload.classList.remove("dragover");
+    });
+
+    fileUpload.addEventListener("drop", (e) => {
+        e.preventDefault();
+        fileUpload.classList.remove("dragover");
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            updateFileDisplay();
+        }
     });
 });
-
