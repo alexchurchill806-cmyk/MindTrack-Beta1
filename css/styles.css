@@ -1,32 +1,58 @@
-/* Progress Bar Styles */
-.progress-bar {
-  width: 100%;
-  background: #e5e7eb;
-  border-radius: 1rem;
-  overflow: hidden;
-  margin: 1.5rem 0 1rem 0;
-  height: 1.5rem;
-  position: relative;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  display: flex;
+/* Dashboard circular progress */
+.dashboard-progress {
+  margin-top: 0.8rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: #f7faff;
+  display: inline-flex;
   align-items: center;
+  gap: 1rem;
 }
-.progress-bar-fill {
-  background: linear-gradient(90deg, var(--accent), #4f8cff);
+
+.progress-circle {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  display: grid;
+  place-items: center;
+}
+
+.progress-circle svg {
+  width: 100%;
   height: 100%;
-  transition: width 0.4s cubic-bezier(.4,1.4,.6,1);
-  border-radius: 1rem 0 0 1rem;
+  transform: rotate(-90deg);
 }
-.progress-label {
+
+.progress-circle-track,
+.progress-circle-fill {
+  fill: none;
+  stroke-width: 10;
+}
+
+.progress-circle-track {
+  stroke: #dbe7ff;
+}
+
+.progress-circle-fill {
+  stroke: #0b5ed7;
+  stroke-linecap: round;
+  stroke-dasharray: 326.73;
+  stroke-dashoffset: 326.73;
+  transition: stroke-dashoffset 0.35s ease;
+}
+
+.progress-circle-value {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.progress-circle-caption {
+  margin: 0;
   font-weight: 600;
-  font-size: 0.95rem;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.08);
-  pointer-events: none;
+  color: #334155;
 }
 /* Shared navigation and page styling */
 :root {
@@ -124,6 +150,23 @@ h2 {
   margin-top: 0;
 }
 
+.weekly-container .week-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.weekly-container .week-label {
+  text-align: center;
+  font-weight: 600;
+}
+
+.weekly-container h2 {
+  text-align: center;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -172,6 +215,13 @@ ul {
 
   .main-nav ul {
     justify-content: center;
+  }
+
+  .dashboard-progress {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
   }
 }
 

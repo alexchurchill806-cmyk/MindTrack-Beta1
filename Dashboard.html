@@ -67,9 +67,20 @@
 			</details>
 
 			<h3>Progress</h3>
+			<div class="dashboard-progress" aria-live="polite">
+				<div class="progress-circle" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Habit completion progress">
+					<svg viewBox="0 0 120 120" aria-hidden="true">
+						<circle class="progress-circle-track" cx="60" cy="60" r="52"></circle>
+						<circle class="progress-circle-fill" cx="60" cy="60" r="52"></circle>
+					</svg>
+					<span class="progress-circle-value">0%</span>
+				</div>
+				<p class="progress-circle-caption">Habits completed today</p>
+			</div>
 		</section>
 	</main>
 
+	<script src="js/Dashboard.js"></script>
 </body>
 </html>
 
